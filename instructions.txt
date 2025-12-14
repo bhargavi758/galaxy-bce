@@ -1,16 +1,13 @@
-Part 1: 
-Given the attached app.py please do the following:
+Part 1: Flask App Containerization & Deployment
 
-1. Write a Dockerfile to package this flask Application as a container.
-2. Write the necessary Kubernetes manifests to deploy this container as a web application.
-3. Incorporate a dummy URL this application would respond on.
+Here's what we need to do with the app.py file:
 
-Requirements:
+1. Create a Dockerfile to containerize this Flask app
+2. Write K8s manifests for deployment 
+3. Set up a dummy URL endpoint
 
-- Treat this as introducing a new application into an already existing Kubernetes cluster that already has a number of other
- web applications deployed. The Kubernetes files should be designed with Production quality, High Availability, and Scalability in mind.
-- Do not affix the Application Pod to a static port on the host.
-- Reproducibility. Use the most efficient cloud costs management approach when creating your manifests in case
- the company decides to create 20 additional similar applications.
-
- 
+Key things to keep in mind:
+- We're adding this to an existing K8s cluster that's already running multiple web apps
+- This needs to be production-ready - think HA, scalability, the works
+- Don't hardcode pod ports to the host
+- Keep it DRY - we might spin up 20+ similar apps later, so let's be smart about resource usage and make this easily replicable
