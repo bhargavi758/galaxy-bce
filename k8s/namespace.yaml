@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: galaxy-web
+  labels:
+    name: galaxy-web
+    purpose: web-applications
+

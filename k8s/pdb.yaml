@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: galaxy-bce-pdb
+  namespace: galaxy-web
+  labels:
+    app: galaxy-bce
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: galaxy-bce
+

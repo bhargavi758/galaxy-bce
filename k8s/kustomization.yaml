@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+metadata:
+  name: galaxy-bce
+
+namespace: galaxy-web
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  - hpa.yaml
+  - pdb.yaml
+
+# Image tag is managed by CI/CD for immutability
+# CI/CD should update this directly: kustomize edit set image galaxy-bce:<version>
+images:
+  - name: galaxy-bce
+    newTag: 1.0.0
+
+commonLabels:
+  app: galaxy-bce
+  managed-by: kustomize
+
