@@ -155,8 +155,3 @@ kubectl describe ingress -n galaxy-web galaxy-bce
 ## Documentation
 
 For detailed deployment documentation, architecture decisions, and rationale, see [DEPLOYMENT_DOCUMENTATION.md](./DEPLOYMENT_DOCUMENTATION.md).
-
-## License
-
-[Add your license here]
-
